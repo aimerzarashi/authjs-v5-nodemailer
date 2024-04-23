@@ -1,0 +1,12 @@
+version: "3"
+services:
+  web:
+    container_name: web
+    build:
+      context: ./ui/app
+      dockerfile: ./ui/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ui/app:/app
+    tty: true
