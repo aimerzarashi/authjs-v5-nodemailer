@@ -65,7 +65,6 @@ model VerificationToken {
   expires    DateTime
  
   @@id([identifier, token])
-//  @@unique([identifier, token])
 }
  
 // Optional for WebAuthn support
