@@ -3,8 +3,8 @@ services:
   web:
     container_name: web
     build:
-      context: .
-      dockerfile: ./ui/Dockerfile
+      context: ./ui
+      dockerfile: ./Dockerfile
     ports:
       - "3000:3000"
     tty: true
@@ -24,3 +24,5 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
       POSTGRES_DB: authjs
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
