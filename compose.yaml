@@ -9,7 +9,7 @@ services:
       - db
       - smtp
     volumes:
-      - ./ui:/app
+      - ./web:/app
     tty: true
     working_dir: /app
     command:
@@ -35,3 +35,5 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
       POSTGRES_DB: authjs
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
