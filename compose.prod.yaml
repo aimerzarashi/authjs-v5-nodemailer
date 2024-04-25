@@ -8,13 +8,8 @@ services:
     ports:
       - "3000:3000"
     tty: true
-    environment:
-      - AUTH_SECRET=ObjQQ/kxEEp8p2jwTZdfmHOxJFDJ5UxnBA7+d0FZl0E=
-      - DATABASE_URL=postgres://user:password@db:5432/authjs
-      - EMAIL_SERVER=smtp://user:password@smtp:1025
-      - EMAIL_FROM=authenticator@aimerzarashi.com
-      - AUTH_URL=http://localhost:3000
-      - AUTH_TRUST_HOST=true
+    env_file:
+    - ./web/.env.local
   smtp:
     container_name: smtp
     image: mailhog/mailhog:latest
