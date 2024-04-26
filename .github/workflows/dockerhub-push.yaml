@@ -32,6 +32,6 @@ jobs:
       - name: DockerHub Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./web
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/authjs-v5-nodemailer:0.0.1
